@@ -21,7 +21,7 @@
 	% french,                 % idioma adicional para hifenização
 	% spanish,                % idioma adicional para hifenização
 	brazil                    % o último idioma é o principal do documento
-	]{abntex2}
+]{abntex2}
 
 % ---
 % Pacotes básicos 
@@ -33,15 +33,17 @@
 \usepackage{color}            % Controle das cores
 \usepackage{graphicx}         % Inclusão de gráficos
 \usepackage{microtype}        % para melhorias de justificação
+\usepackage[portuges]{datetime2}
+\DTMlangsetup[portuges]{showdayofmonth=false}
 		
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
-\usepackage{lipsum}           % para geração de dummy text
+\usepackage{lipsum}                           % para geração de dummy text
 
 % ---
 % Pacotes de citações
-\usepackage[brazilian,hyperpageref]{backref}    % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}                   % Citações padrão ABNT
+\usepackage[brazilian,hyperpageref]{backref}  % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}                 % Citações padrão ABNT
 
 % --- 
 % CONFIGURAÇÕES DE PACOTES
@@ -50,17 +52,19 @@
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
+
 % Define os textos da citação
 \renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
+	\ifcase #1
+		Nenhuma citação no texto.
 	\or
-		Citado na página #2.%
+		Citado na página #2.
 	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
+		Citado #1 vezes nas páginas #2.
+	\fi}
 
 \input{./sections/preTextual/cover.tex}
 
@@ -90,10 +94,10 @@
 % --- 
 % Espaçamentos entre linhas e parágrafos 
 
-\setlength{\parindent}{1.3cm}  % O tamanho do parágrafo
+\setlength{\parindent}{1.3cm} % O tamanho do parágrafo
 
 % Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % Tente também \onelineskip
+\setlength{\parskip}{0.2cm} % Tente também \onelineskip
 
 \makeindex  % Compila o indice
 
@@ -133,34 +137,25 @@
 % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
 \input{sections/textual/introduction.tex}
 
-
 % ---
 % PARTE
-% ---
 \part{Preparação da pesquisa}
-% ---
 
 % ---
 % Capitulo com exemplos de comandos inseridos de arquivo externo 
-% ---
 \include{abntex2-modelo-include-comandos}
-% ---
 
 % ---
 % PARTE
 % ---
 \part{Referenciais teóricos}
-% ---
 
 % ---
 % Capitulo de revisão de literatura
-% ---
 \chapter{Lorem ipsum dolor sit amet}
-% ---
 
 % ---
 \section{Aliquam vestibulum fringilla lorem}
-% ---
 
 \lipsum[1]
 
@@ -170,31 +165,24 @@
 % PARTE
 % ---
 \part{Resultados}
-% ---
 
 % ---
 % primeiro capitulo de Resultados
-% ---
 \chapter{Lectus lobortis condimentum}
-% ---
 
 % ---
 \section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
   posuere cubilia Curae}
-% ---
 
 \lipsum[21-22]
 
 % ---
 % segundo capitulo de Resultados
-% ---
 \chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
   elementum}
-% ---
 
 % ---
 \section{Pellentesque sit amet pede ac sem eleifend consectetuer}
-% ---
 
 \lipsum[24]
 
